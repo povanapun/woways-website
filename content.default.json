@@ -1,0 +1,84 @@
+{
+  "hero": {
+    "kicker": "Woways Private Limited",
+    "title": "An execution partner for the work that keeps a company moving.",
+    "subtitle": "We sit inside your sales, marketing, operations, HR and technology work — the way an internal team would — and carry it forward with our own platforms for education, counselling and performance built in.",
+    "ctaPrimary": "Bring us in",
+    "ctaSecondary": "See what we've built",
+    "stat1Num": "5",
+    "stat1Label": "Functions we execute inside partner companies",
+    "stat2Num": "4",
+    "stat2Label": "Products built and run by Woways",
+    "stat3Num": "3",
+    "stat3Label": "Stages in how we work: execute, grow, transform"
+  },
+  "capabilitiesHeading": "What we do",
+  "capabilitiesIntro": "Woways works alongside partnered companies as an added execution layer — taking on the day-to-day work across five functions so internal teams can focus on the decisions only they can make.",
+  "capabilities": [
+    { "name": "Sales", "desc": "Pipeline execution, outreach and closing support that plugs into your existing targets." },
+    { "name": "Marketing", "desc": "Campaigns, content and channel work run end to end, reporting back into your team." },
+    { "name": "Operations", "desc": "Process execution and coordination that keeps daily operations moving without gaps." },
+    { "name": "HR", "desc": "Hiring, onboarding and people operations handled with your standards, on your timeline." },
+    { "name": "Technology", "desc": "Product, platform and tooling work — including the SaaS products we build ourselves." }
+  ],
+  "processHeading": "How we work",
+  "processIntro": "Every engagement moves through the same three stages — it's the reason clients bring us in, and the reason we stay.",
+  "process": [
+    { "title": "Execute", "desc": "We take on the work that's already defined — running it well, on schedule, inside your existing systems." },
+    { "title": "Grow", "desc": "Once the work is stable, we look for where it can scale — more reach, more output, more coverage." },
+    { "title": "Transform", "desc": "We bring in the data, tooling and process changes that shift how the function runs going forward." }
+  ],
+  "productsHeading": "Our products",
+  "productsIntro": "Alongside execution work, Woways builds and runs its own platforms — for students choosing a path, and for companies running their teams.",
+  "products": {
+    "talentIgnition": {
+      "tag": "Edtech",
+      "name": "Talent Ignition",
+      "lead": "An edtech platform that closes the gap between what students are taught and what industry expects — turning passive learners into active ones with a clear career path ahead of them.",
+      "features": [
+        "Identifies where a student's academic gap is holding them back",
+        "Builds knowledge and confidence to close that gap directly",
+        "Moves students from passive learning to active participation",
+        "Provides career counselling aligned to real industry expectations"
+      ]
+    },
+    "consulbuzz": {
+      "tag": "Counselling",
+      "name": "ConsulBuzz",
+      "lead": "A platform for students and their parents to make sense of career and college decisions together — built around what the family actually expects from the outcome.",
+      "subproducts": [
+        { "name": "Student Mentor", "desc": "Counselling for students after 12th, helping them choose the right career path with clarity instead of guesswork." },
+        { "name": "College Macha", "desc": "A way to explore colleges, compare them side by side, and land on the one that fits both the student and the parent's expectations." }
+      ]
+    },
+    "bispun": {
+      "tag": "SaaS",
+      "name": "Bispun",
+      "lead": "A CRM built for entities that need to track their day-to-day work clearly — and act on what the data is telling them, with AI helping surface corrections and plans.",
+      "features": [
+        "Tracks regular work across teams in one place",
+        "Surfaces AI-driven corrections and future plans from the data",
+        "Works as an entity management portal for the organisation"
+      ]
+    },
+    "performanceCrm": {
+      "tag": "SaaS",
+      "name": "Performance CRM",
+      "lead": "A day-to-day performance tracker for organisations, built so no one misses the appraisal or hike they've earned — and no department loses sight of its own progress.",
+      "features": [
+        "Tracks each employee's KRAs and KPIs continuously, not just at review time",
+        "Keeps individuals visible for appraisal and hike decisions",
+        "Rolls up into an entity performance portal across every department"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Let's work out where you need us.",
+    "subtitle": "Tell us a little about your company and what you're trying to get done. We'll come back with where Woways fits — execution support, one of our products, or both.",
+    "point1": "One short form. No sales call unless you ask for one.",
+    "point2": "We reply from a real person on the Woways team, not an inbox."
+  },
+  "footer": {
+    "tagline": "Execute. Grow. Transform."
+  }
+}
