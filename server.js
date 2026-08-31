@@ -98,7 +98,7 @@ app.get('/api/leads/export', adminAuth, (req, res) => {
 });
 
 // ---------- Admin UI (protected) ----------
-app.use('/admin', adminAuth, express.static(path.join(__dirname, 'admin')));
+app.use('/admin', adminAuth, express.static(path.join(__dirname, 'admin'), { index: 'admin.html' }));
 
 // ---------- Health check ----------
 app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
