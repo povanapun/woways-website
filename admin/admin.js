@@ -42,7 +42,8 @@ function buildForm(content) {
       <h2>Hero section</h2>
       ${field('Kicker (small label above headline)', 'hero_kicker')}
       ${field('Headline', 'hero_title', '', true)}
-      ${field('Subheading', 'hero_subtitle', '', true)}
+      ${field('Subheading (paragraph 1)', 'hero_subtitle', '', true)}
+      ${field('Subheading (paragraph 2)', 'hero_subtitle2', '', true)}
       <div class="grid-2">
         ${field('Primary button text', 'hero_ctaPrimary')}
         ${field('Secondary button text', 'hero_ctaSecondary')}
@@ -92,18 +93,18 @@ function buildForm(content) {
     <div class="card">
       <h2>Products</h2>
       ${field('Section heading', 'productsHeading')}
-      ${field('Section intro', 'productsIntro', '', true)}
-
       <h2 style="margin-top:24px;">Talent Ignition</h2>
       ${field('Tag', 'ti_tag')}
       ${field('Name', 'ti_name')}
-      ${field('Description', 'ti_lead', '', true)}
+      ${field('Card summary (short, for the overview grid)', 'ti_summary', '', true)}
+      ${field('Full description', 'ti_lead', '', true)}
       ${c.products.talentIgnition.features.map((f, i) => field('Feature ' + (i + 1), 'ti_feat_' + i)).join('')}
 
       <h2 style="margin-top:24px;">ConsulBuzz</h2>
       ${field('Tag', 'cb_tag')}
       ${field('Name', 'cb_name')}
-      ${field('Description', 'cb_lead', '', true)}
+      ${field('Card summary (short, for the overview grid)', 'cb_summary', '', true)}
+      ${field('Full description', 'cb_lead', '', true)}
       <div class="grid-2">
         ${field('Student Mentor name', 'cb_sub0_name')}
         ${field('College Macha name', 'cb_sub1_name')}
@@ -116,19 +117,22 @@ function buildForm(content) {
       <h2 style="margin-top:24px;">Bispun</h2>
       ${field('Tag', 'bp_tag')}
       ${field('Name', 'bp_name')}
-      ${field('Description', 'bp_lead', '', true)}
+      ${field('Card summary (short, for the overview grid)', 'bp_summary', '', true)}
+      ${field('Full description', 'bp_lead', '', true)}
       ${c.products.bispun.features.map((f, i) => field('Feature ' + (i + 1), 'bp_feat_' + i)).join('')}
 
       <h2 style="margin-top:24px;">Performance CRM</h2>
       ${field('Tag', 'pc_tag')}
       ${field('Name', 'pc_name')}
-      ${field('Description', 'pc_lead', '', true)}
+      ${field('Card summary (short, for the overview grid)', 'pc_summary', '', true)}
+      ${field('Full description', 'pc_lead', '', true)}
       ${c.products.performanceCrm.features.map((f, i) => field('Feature ' + (i + 1), 'pc_feat_' + i)).join('')}
     </div>
 
     <div class="card">
       <h2>Contact section</h2>
-      ${field('Heading', 'contact_title')}
+      ${field('Section title', 'contact_sectionTitle')}
+      ${field('Card heading', 'contact_title')}
       ${field('Subheading', 'contact_subtitle', '', true)}
       ${field('Point 1', 'contact_point1')}
       ${field('Point 2', 'contact_point2')}
@@ -137,6 +141,8 @@ function buildForm(content) {
     <div class="card">
       <h2>Footer</h2>
       ${field('Tagline', 'footer_tagline')}
+      ${field('Email', 'footer_email')}
+      ${field('Address', 'footer_address')}
     </div>
   `;
 
@@ -144,6 +150,7 @@ function buildForm(content) {
   setVal('hero_kicker', c.hero.kicker);
   setVal('hero_title', c.hero.title);
   setVal('hero_subtitle', c.hero.subtitle);
+  setVal('hero_subtitle2', c.hero.subtitle2);
   setVal('hero_ctaPrimary', c.hero.ctaPrimary);
   setVal('hero_ctaSecondary', c.hero.ctaSecondary);
   setVal('hero_stat1Num', c.hero.stat1Num);
@@ -168,15 +175,16 @@ function buildForm(content) {
   });
 
   setVal('productsHeading', c.productsHeading);
-  setVal('productsIntro', c.productsIntro);
 
   setVal('ti_tag', c.products.talentIgnition.tag);
   setVal('ti_name', c.products.talentIgnition.name);
+  setVal('ti_summary', c.products.talentIgnition.summary);
   setVal('ti_lead', c.products.talentIgnition.lead);
   c.products.talentIgnition.features.forEach((f, i) => setVal('ti_feat_' + i, f));
 
   setVal('cb_tag', c.products.consulbuzz.tag);
   setVal('cb_name', c.products.consulbuzz.name);
+  setVal('cb_summary', c.products.consulbuzz.summary);
   setVal('cb_lead', c.products.consulbuzz.lead);
   setVal('cb_sub0_name', c.products.consulbuzz.subproducts[0].name);
   setVal('cb_sub0_desc', c.products.consulbuzz.subproducts[0].desc);
@@ -185,20 +193,25 @@ function buildForm(content) {
 
   setVal('bp_tag', c.products.bispun.tag);
   setVal('bp_name', c.products.bispun.name);
+  setVal('bp_summary', c.products.bispun.summary);
   setVal('bp_lead', c.products.bispun.lead);
   c.products.bispun.features.forEach((f, i) => setVal('bp_feat_' + i, f));
 
   setVal('pc_tag', c.products.performanceCrm.tag);
   setVal('pc_name', c.products.performanceCrm.name);
+  setVal('pc_summary', c.products.performanceCrm.summary);
   setVal('pc_lead', c.products.performanceCrm.lead);
   c.products.performanceCrm.features.forEach((f, i) => setVal('pc_feat_' + i, f));
 
+  setVal('contact_sectionTitle', c.contact.sectionTitle);
   setVal('contact_title', c.contact.title);
   setVal('contact_subtitle', c.contact.subtitle);
   setVal('contact_point1', c.contact.point1);
   setVal('contact_point2', c.contact.point2);
 
   setVal('footer_tagline', c.footer.tagline);
+  setVal('footer_email', c.footer.email);
+  setVal('footer_address', c.footer.address);
 }
 
 function collectForm() {
@@ -207,14 +220,9 @@ function collectForm() {
   c.hero.kicker = getVal('hero_kicker');
   c.hero.title = getVal('hero_title');
   c.hero.subtitle = getVal('hero_subtitle');
+  c.hero.subtitle2 = getVal('hero_subtitle2');
   c.hero.ctaPrimary = getVal('hero_ctaPrimary');
   c.hero.ctaSecondary = getVal('hero_ctaSecondary');
-  c.hero.stat1Num = getVal('hero_stat1Num');
-  c.hero.stat1Label = getVal('hero_stat1Label');
-  c.hero.stat2Num = getVal('hero_stat2Num');
-  c.hero.stat2Label = getVal('hero_stat2Label');
-  c.hero.stat3Num = getVal('hero_stat3Num');
-  c.hero.stat3Label = getVal('hero_stat3Label');
 
   c.capabilitiesHeading = getVal('capabilitiesHeading');
   c.capabilitiesIntro = getVal('capabilitiesIntro');
@@ -231,15 +239,16 @@ function collectForm() {
   });
 
   c.productsHeading = getVal('productsHeading');
-  c.productsIntro = getVal('productsIntro');
 
   c.products.talentIgnition.tag = getVal('ti_tag');
   c.products.talentIgnition.name = getVal('ti_name');
+  c.products.talentIgnition.summary = getVal('ti_summary');
   c.products.talentIgnition.lead = getVal('ti_lead');
   c.products.talentIgnition.features = c.products.talentIgnition.features.map((f, i) => getVal('ti_feat_' + i));
 
   c.products.consulbuzz.tag = getVal('cb_tag');
   c.products.consulbuzz.name = getVal('cb_name');
+  c.products.consulbuzz.summary = getVal('cb_summary');
   c.products.consulbuzz.lead = getVal('cb_lead');
   c.products.consulbuzz.subproducts[0].name = getVal('cb_sub0_name');
   c.products.consulbuzz.subproducts[0].desc = getVal('cb_sub0_desc');
@@ -248,20 +257,25 @@ function collectForm() {
 
   c.products.bispun.tag = getVal('bp_tag');
   c.products.bispun.name = getVal('bp_name');
+  c.products.bispun.summary = getVal('bp_summary');
   c.products.bispun.lead = getVal('bp_lead');
   c.products.bispun.features = c.products.bispun.features.map((f, i) => getVal('bp_feat_' + i));
 
   c.products.performanceCrm.tag = getVal('pc_tag');
   c.products.performanceCrm.name = getVal('pc_name');
+  c.products.performanceCrm.summary = getVal('pc_summary');
   c.products.performanceCrm.lead = getVal('pc_lead');
   c.products.performanceCrm.features = c.products.performanceCrm.features.map((f, i) => getVal('pc_feat_' + i));
 
+  c.contact.sectionTitle = getVal('contact_sectionTitle');
   c.contact.title = getVal('contact_title');
   c.contact.subtitle = getVal('contact_subtitle');
   c.contact.point1 = getVal('contact_point1');
   c.contact.point2 = getVal('contact_point2');
 
   c.footer.tagline = getVal('footer_tagline');
+  c.footer.email = getVal('footer_email');
+  c.footer.address = getVal('footer_address');
 
   return c;
 }
