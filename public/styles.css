@@ -60,7 +60,18 @@ header{
   display:flex; align-items:center; justify-content:space-between;
   padding:16px 40px;
 }
-.brand-mark{height:66px; width:auto; display:block; border-radius:6px;}
+.brand-lockup{
+  display:flex; align-items:center; gap:10px;
+  background:#000F24; padding:10px 16px; border-radius:8px;
+  text-decoration:none;
+}
+.brand-icon{height:32px; width:auto; display:block;}
+.brand-word{
+  font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:22px;
+  letter-spacing:0.01em; line-height:1;
+}
+.brand-wo{color:#FFFFFF;}
+.brand-ways{color:#00A9A9;}
 .nav-links{
   display:flex; align-items:center; gap:8px;
   font-family:'Space Grotesk', sans-serif;
@@ -374,7 +385,9 @@ footer{
   padding:56px 40px; display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr; gap:40px;
   border-bottom:1px solid rgba(242,245,248,0.12); position:relative;
 }
-.footer-brand-mark{height:46px; width:auto; margin-bottom:16px; border-radius:6px;}
+.brand-lockup--footer{margin-bottom:16px; padding:8px 14px;}
+.brand-lockup--footer .brand-icon{height:26px;}
+.brand-lockup--footer .brand-word{font-size:18px;}
 .footer-blurb{color:var(--text-muted-ink); font-size:15px; max-width:34ch;}
 .footer-col h4{
   font-family:'Space Grotesk',sans-serif; font-size:13.5px; font-weight:600;
